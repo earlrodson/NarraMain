@@ -1,0 +1,23 @@
+services:
+  backend:
+      build:
+        context: ./Narra-BE
+      ports:
+        - "8000:8000"
+      env_file:
+        - ./Narra-BE/.env.development  # Load the .env.development file
+      volumes:
+        - ./Narra-BE:/app
+
+  frontend:
+    build:
+      context: ./Narra-FE
+    ports:
+      - "4000:4000"  # Make sure this aligns with your Dockerfile's EXPOSE
+    env_file:
+      - ./Narra-FE/.env.development  # Load the .env.development file
+    environment:
+      - NODE_ENV=development 
+    command: yarn dev
+    volumes:
+      - ./Narra-FE:/app  # Live-reload enabled in development

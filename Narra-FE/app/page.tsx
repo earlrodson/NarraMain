@@ -175,7 +175,7 @@ function ControlBar(props: {
             className="uppercase absolute left-1/2 -translate-x-1/2 px-4 py-2 mt-20 bg-black text-white rounded-md"
             onClick={() => handleStartAConversationClicked()}
           >
-            Start a conversation
+            Start a conversations
           </motion.button>
         )}
       </AnimatePresence>
